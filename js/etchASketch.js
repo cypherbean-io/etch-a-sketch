@@ -1,10 +1,14 @@
 const container = document.querySelector('#container');
-let divCount = 1;
-while (divCount <= 256) {
-  const div = document.createElement('div');
-  container.appendChild(div);
-  div.addEventListener('mouseover', () => {
-    div.style.backgroundColor = 'blue';
-  });
-  divCount++;
+const defaultGridSize = 16;
+
+function createGrid(gridSize) {
+  for (let i = 1; i <= (gridSize * gridSize); i++) {
+    const square = document.createElement('div');
+    container.appendChild(square);
+    square.addEventListener('mouseover', () => {
+    square.style.backgroundColor = 'blue';
+    });
+  };
 }
+
+createGrid(defaultGridSize);
