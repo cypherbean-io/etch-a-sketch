@@ -14,6 +14,19 @@ function resetGrid(parent) {
   };
 }
 
+function resizeGrid() {
+  let newGridSize = prompt('Pick a size between 1 and 100');
+  while (isNaN(newGridSize) || newGridSize > 100 || newGridSize <= 0) {
+    newGridSize = prompt('Pick a size between 1 and 100');
+  }
+  resetGrid(container);
+  createGrid(newGridSize);
+}
+
 const container = document.querySelector('#container');
 const defaultGridSize = 16;
+const sizeButton = document.querySelector('#change-size');
+
+sizeButton.addEventListener('click', () => resizeGrid());
+
 createGrid(defaultGridSize);
