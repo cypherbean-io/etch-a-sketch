@@ -16,9 +16,3 @@ h1 {
   height: 720px;
   width: 720px;
 }
-
-#container div {
-  border: 2px black solid;
-  flex: 0 0 6.25%;
-  box-sizing: border-box;
-}

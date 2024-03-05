@@ -1,6 +1,8 @@
 function createGrid(gridSize) {
   for (let i = 1; i <= (gridSize * gridSize); i++) {
     const square = document.createElement('div');
+    const flexBasis = 100 / gridSize;
+    square.setAttribute('style', `border: 1px black solid; flex: 0 0 ${flexBasis}%; box-sizing: border-box`);
     container.appendChild(square);
     square.addEventListener('mouseover', () => {
     square.style.backgroundColor = 'blue';
